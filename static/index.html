@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+    <link rel="icon" href="../static/src/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../static/src/style.css">
+    <script src="https://kit.fontawesome.com/16f6a2c95d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body >
+    <div id="banda"> 
+        <div id="icono" onclick="mostrarParticipantes()">
+            <i class="fa-solid fa-list" style="color: #ffffff;"></i>
+        </div>
+        <div><b>CONVERTIDOR DE NÚMEROS</b></div>
+        <div></div>
+    </div>
+    <div id="contenedor">
+        <section id="entrada">
+            <!-- action="" -->
+            <div id="form">
+                <label for="entrada">Entrada:</label>
+                <input name="entrada" id="texto-entrada" type="text">
+                <button onclick="convertir()">Convertir</button>
+            </div id="form">
+            
+        </section>
+        <section id="salida">
+            <div id="equivalente">Equivalente a:</div>
+            <div id="texto-salida">SALIDA</div>
+        </section>
+    </div>
+    <div id="banda"></div>
+
+    <section id="participantes">
+        <p>
+            <b>Desarrollado por:</b><br>
+            Carlos Fernández <br>
+            Diana Davila <br>
+            Jezer Padilla <br>
+            Kattherine Hernandez <br>
+            Neyssam Padilla <br>
+        </p>
+    </section>
+
+    <script src="../static/src/controller.js"></script>
+</body>
+</html>

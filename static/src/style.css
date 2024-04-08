@@ -1,0 +1,92 @@
+@media (max-width:600px) {
+    #participantes{
+        height: 80%;
+        width: 90%;
+        position: absolute;
+        background-color: white;
+        bottom: 0;
+        transition: left 0.5s;
+        border-bottom-right-radius: 35px;
+    }
+}
+#banda {
+    display: flex;
+    background-color: black;
+    height: 10%;
+    text-align: center;
+    color: white;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+body{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+i{
+    margin-left: 2%;
+}
+#icono{
+    display: flex;
+}
+#form{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    background-color: rgb(161, 172, 171);
+    height: 10%;
+    color: white;
+    font-size: large;
+}
+#entrada, #salida{
+    height: 50%;
+}
+#salida{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#contenedor{
+    height: 80%;
+}
+button{
+    color: white;
+    background-color: black;
+}
+#equivalente{
+    margin-bottom: 5%;
+}
+#texto-salida{
+    background-color: blue;
+    height: 25%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(161, 172, 171);
+    color: black;
+    font-size: xx-large;
+}
+#participantes{
+    height: 80%;
+    width: 30%;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    transition: left 0.5s;
+    border-bottom-right-radius: 35px;
+}
+p{
+    padding: 10%;
+}
