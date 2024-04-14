@@ -1,12 +1,14 @@
 import re
 import random
 
+#Inicio - Analizador Léxico
 palabras_reservadas = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo', 'Aleatorio']
 
 def analizador_lexico(cadena):
     tokens = re.findall(r'(\d+)([A-Za-z]+)', cadena)
     for i, (numero, destino) in enumerate(tokens, start=1):
         yield i, numero, destino
+#Fin - Analizador Léxico
 
 def decimal_a_hexadecimal(numero):
     return hex(int(numero))[2:].upper()
