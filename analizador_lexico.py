@@ -1,5 +1,6 @@
 import re
 import random
+import convertidor_romano
 
 #Inicio - Analizador Léxico
 palabras_reservadas = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo', 'Aleatorio']
@@ -67,7 +68,7 @@ def modulo_de_numeros_romanos(numero,resultado_romano,bloque):
 
     return numero,resultado_romano
     
-def decimal_a_romano(n):
+"""def decimal_a_romano(n):
     numero = int(n)
     cantidad_bloques = int(n)
     resultado_romano = ''
@@ -90,9 +91,11 @@ def decimal_a_romano(n):
     else:
         numero,resultado_romano=modulo_de_numeros_romanos(numero,resultado_romano,1)
         
-    return resultado_romano
+    return resultado_romano"""
     
-
+def decimal_a_romano(n):
+    return convertidor_romano.convertir_a_romano(n)
+    
 def decimal_a_aleatorio(numero):
     destinos = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo']
     destino_aleatorio = random.choice(destinos)
@@ -106,6 +109,7 @@ def decimal_a_aleatorio(numero):
         return decimal_a_romano(numero)
     elif destino_aleatorio == 'Alternativo':
         return decimal_a_morse(numero)
+
 
 def convertir(cadena):
     print('\nAnálisis Léxico')
@@ -151,5 +155,5 @@ def convertir(cadena):
             print(f"|No. Línea : {linea}   | Token Numero : {numero} | Token Error: {destino} |")
         
 # Ejemplo de uso
-#cadena = "1592752900Romano /n592752900Octal /n592752900Decimal /n592752900Binario"
+#cadena = "13Romano /n592752900Octal /n592752900Decimal /n592752900Binario"
 #convertir(cadena)
