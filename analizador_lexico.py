@@ -79,7 +79,9 @@ def modulo_de_numeros_romanos(numero,resultado_romano,bloque):
         cantidad_bloques=cantidad_bloques/1000
         
     if numero >= 4*bloque:
-        while bloque/1000>=1:
+        
+        
+        while bloque>=1:
             numero,resultado_romano=modulo_de_numeros_romanos(numero,resultado_romano,bloque)
             bloque=bloque/1000
             
