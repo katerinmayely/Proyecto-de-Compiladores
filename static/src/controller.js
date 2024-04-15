@@ -8,7 +8,6 @@ function mostrarParticipantes(params) {
 }
 
 function convertir(){
-    console.log('Tamos aqui')
     var entrada = document.getElementById('texto-entrada').value;
     console.log(entrada)
 
@@ -35,6 +34,9 @@ function convertir(){
 
 function mostrarSalida(salida){
     try {
+        if(salida.length > 20){
+            salida = 'Salida demasiado extensa. Revise el resultado en consola.'
+        }
         document.getElementById('texto-salida').innerHTML = salida; 
     } catch (error) {
         alert('Entrada Inválida.')
