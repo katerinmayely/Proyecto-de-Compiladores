@@ -5,19 +5,10 @@ from analizador_lexico import convertir
 
 app = Flask(__name__)
 
-def convertir_a_morse(num):
-    pass
-
-@app.route('/k') 
-def hola():
-    print('Estamos en consola!!')
-    return 'Hola'
-
 @app.route('/') 
 def index():
     print('Estamos en consola!!')
     return send_from_directory('static', 'index.html')
-
 
 def analisis_sintactico(entrada):
     return imprimir_arbol_sintactico_y_resultado(entrada)

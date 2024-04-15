@@ -66,7 +66,5 @@ def imprimir_arbol_sintactico_y_resultado(entrada):
     except Exception as e:
         print(e)
         
-    return 'Salida ' + str(evaluar(arbol))
-        
-imprimir_arbol_sintactico_y_resultado('1000binario')
+    return str(evaluar(arbol))
     

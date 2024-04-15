@@ -45,7 +45,7 @@ i{
 input{
     background-color: rgb(161, 172, 171);
     height: 10%;
-    color: white;
+    color: black;
     font-size: large;
 }
 #entrada, #salida{
@@ -89,4 +89,7 @@ button{
 }
 p{
     padding: 10%;
+}
+.boton{
+    cursor: pointer;
 }
