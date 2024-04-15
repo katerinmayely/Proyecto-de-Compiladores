@@ -80,7 +80,7 @@ def decimal_a_romano(n):
     
 
 def decimal_a_aleatorio(numero):
-    destinos = ['Hexadecimal', 'Octal', 'Binario', 'Romano']
+    destinos = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo']
     destino_aleatorio = random.choice(destinos)
     if destino_aleatorio == 'Hexadecimal':
         return decimal_a_hexadecimal(numero)
@@ -90,43 +90,45 @@ def decimal_a_aleatorio(numero):
         return decimal_a_binario(numero)
     elif destino_aleatorio == 'Romano':
         return decimal_a_romano(numero)
+    elif destino_aleatorio == 'Alternativo':
+        return decimal_a_morse(numero)
 
 def convertir(cadena):
     print('\nAnálisis Léxico')
     for linea, numero, destino in analizador_lexico(cadena):
-        destinoValido = re.compile(r'(' + '|'.join(palabras_reservadas) + ')')
+        destinoValido = re.compile(r'(' + '|'.join(palabras_reservadas) + ')', re.IGNORECASE)
         coincidencia = destinoValido.search(destino)
         if coincidencia:
             print(f"+---------------------------------------------------------------------+")
             print(f"|No. Línea : {linea} | Token Numero : {numero} | Token Destino: {destino} ")
 
-            if destino == 'Hexadecimal':
+            if destino.lower() == 'Hexadecimal'.lower():
                 print(f"+---------------------------------------------------------------------+")
                 print(f"| Cadena: {numero}{destino} | Salida: {decimal_a_hexadecimal(numero)}                     |")
                 print(f"+---------------------------------------------------------------------+")
                 
-            elif destino == 'Octal':
+            elif destino.lower() == 'Octal'.lower():
                 print(f"+---------------------------------------------------------------------+")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_octal(numero)}                        |")
                 print(f"+---------------------------------------------------------------------+")
                  
-            elif destino == 'Binario':
+            elif destino.lower() == 'Binario'.lower():
                 print(f"+---------------------------------------------------------------------+")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_binario(numero)}  |")
                 print(f"+---------------------------------------------------------------------+")
                
-            elif destino == 'Romano':
+            elif destino.lower() == 'Romano'.lower():
                 
                 print(f"+---------------------------------------------------------------------+")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_romano(numero)}               |")
                 print(f"+---------------------------------------------------------------------+")
                 
-            elif destino == 'Aleatorio':
+            elif destino.lower() == 'Aleatorio'.lower():
                 print(f"+-------------------------------------------------------------------------")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_aleatorio(numero)}     |")
                 print(f"+-------------------------------------------------------------------------")
      
-            elif destino == 'Morse':
+            elif destino.lower() == 'Alternativo'.lower():
                 print(f"+-------------------------------------------------------------------------")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_morse(numero)}         |")
                 print(f"+-------------------------------------------------------------------------")
