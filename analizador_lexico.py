@@ -151,5 +151,5 @@ def convertir(cadena):
             print(f"|No. Línea : {linea}   | Token Numero : {numero} | Token Error: {destino} |")
         
 # Ejemplo de uso
-#cadena = "1592752900Romano /n592752900Octal /n592752900Decimal /n592752900Binario"
-#convertir(cadena)
+cadena = "15Romano /n592752900Octal /n592752900Decimal /n592752900Binario"
+convertir(cadena)

@@ -1,6 +1,6 @@
 from lark import Lark, Tree
 from random import random, choice
-from analizador_lexico import convertir, decimal_a_aleatorio, decimal_a_binario, decimal_a_hexadecimal, decimal_a_octal, decimal_a_romano
+from analizador_lexico import convertir, decimal_a_aleatorio, decimal_a_binario, decimal_a_hexadecimal, decimal_a_morse, decimal_a_octal, decimal_a_romano
 
 # Gramática del lenguaje
 gramatica = '''
@@ -46,8 +46,7 @@ def evaluar(arbol):
     elif valor_a_evaluar == 'binario':
         return str(decimal_a_binario(entero)) 
     elif valor_a_evaluar == 'morse':
-        #print(decimal_a_morse(entero)) 
-        pass
+        return str(decimal_a_morse(entero)) 
     elif valor_a_evaluar == 'aleatorio':
         return str(decimal_a_aleatorio(entero)) 
 
