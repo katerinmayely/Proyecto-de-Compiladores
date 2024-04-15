@@ -90,28 +90,53 @@ def decimal_a_aleatorio(numero):
 
 def convertir(cadena):
     for linea, numero, destino in analizador_lexico(cadena):
-        destinoValido= re.compile(r'(' + '|'.join(palabras_reservadas) + ')')
+        destinoValido = re.compile(r'(' + '|'.join(palabras_reservadas) + ')')
         coincidencia = destinoValido.search(destino)
         if coincidencia:
-            print(f"N linea: {linea} token numero {numero}")
-            print(f"N linea: {linea} token destino {destino}")
+            print(f"+---------------------------------------------------------------------+")
+            print(f"|No. Línea : {linea} | Token Numero : {numero} | Token Destino: {destino} ")
+            
+           
 
             if destino == 'Hexadecimal':
-                print(f"Cadena: {numero}{destino} => Salida: {decimal_a_hexadecimal(numero)}")
+                print(f"+---------------------------------------------------------------------+")
+                print(f"| Cadena: {numero}{destino} | Salida: {decimal_a_hexadecimal(numero)}                     |")
+                print(f"+---------------------------------------------------------------------+")
+                
             elif destino == 'Octal':
-                print(f"Cadena: {numero}{destino} => Salida: {decimal_a_octal(numero)}")
+                print(f"+---------------------------------------------------------------------+")
+                print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_octal(numero)}                        |")
+                print(f"+---------------------------------------------------------------------+")
+                 
             elif destino == 'Binario':
-                print(f"Cadena: {numero}{destino} => Salida: {decimal_a_binario(numero)}")
+                print(f"+---------------------------------------------------------------------+")
+                print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_binario(numero)}  |")
+                print(f"+---------------------------------------------------------------------+")
+               
             elif destino == 'Romano':
-                print(f"Cadena: {numero}{destino} => Salida: {decimal_a_romano(numero)}")
+                
+                print(f"+---------------------------------------------------------------------+")
+                print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_romano(numero)}               |")
+                print(f"+---------------------------------------------------------------------+")
+                
             elif destino == 'Aleatorio':
-                print(f"Cadena: {numero}{destino} => Salida: {decimal_a_aleatorio(numero)}")
+                print(f"+-------------------------------------------------------------------------")
+                print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_aleatorio(numero)}     |")
+                print(f"+-------------------------------------------------------------------------")
+                
+            elif destino == 'Morse':
+                print(f"+-------------------------------------------------------------------------")
+                print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_morse(numero)}         |")
+                print(f"+-------------------------------------------------------------------------")
+
+        
+
+                
 
 
         else:
-            print(f"N linea: {linea} token numero {numero}")
-            print(f"N linea: {linea} token ERROR {destino}")
-        print("--------------------------------")
+            print(f"+---------------------------------------------------------------------+")
+            print(f"|No. Línea : {linea}   | Token Numero : {numero} | Token Error: {destino} |")
         
 # Ejemplo de uso
 cadena = "1592752900Romano /n592752900Octal /n592752900Decimal /n592752900Binario"
