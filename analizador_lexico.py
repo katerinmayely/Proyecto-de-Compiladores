@@ -20,7 +20,21 @@ def decimal_a_binario(numero):
     return bin(int(numero))[2:]
     
 def decimal_a_morse(numero):
-    pass
+    # Definimos un diccionario que mapea cada dígito del número a su equivalente en código Morse
+    morse_code = {
+        '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+        '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
+    }
+    # Creamos una lista vacía para almacenar los códigos Morse de los dígitos
+    codigo_morse = []
+    # Iteramos sobre cada dígito en el número ingresado por el usuario
+    for digito in numero:
+        # Verificamos si el dígito es un número (isdigit() devuelve True si el dígito es un número)
+        if digito.isdigit():
+            # Si el dígito es un número, añadimos su equivalente en código Morse a la lista
+            codigo_morse.append(morse_code[digito])
+    # Finalmente, unimos los códigos Morse de los dígitos con un espacio y devolvemos el resultado como una cadena
+    return ' '.join(codigo_morse)
 
 def modulo_de_numeros_romanos(numero,resultado_romano,bloque):
     valores_romanos = {
