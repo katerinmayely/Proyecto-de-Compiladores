@@ -19,6 +19,9 @@ def decimal_a_octal(numero):
 def decimal_a_binario(numero):
     return bin(int(numero))[2:]
     
+def decimal_a_morse(numero):
+    pass
+
 def modulo_de_numeros_romanos(numero,resultado_romano,bloque):
     valores_romanos = {
         1: 'I', 4: 'IV', 5: 'V', 9: 'IX', 10: 'X',
@@ -89,14 +92,13 @@ def decimal_a_aleatorio(numero):
         return decimal_a_romano(numero)
 
 def convertir(cadena):
+    print('\nAnálisis Léxico')
     for linea, numero, destino in analizador_lexico(cadena):
         destinoValido = re.compile(r'(' + '|'.join(palabras_reservadas) + ')')
         coincidencia = destinoValido.search(destino)
         if coincidencia:
             print(f"+---------------------------------------------------------------------+")
             print(f"|No. Línea : {linea} | Token Numero : {numero} | Token Destino: {destino} ")
-            
-           
 
             if destino == 'Hexadecimal':
                 print(f"+---------------------------------------------------------------------+")
@@ -123,17 +125,11 @@ def convertir(cadena):
                 print(f"+-------------------------------------------------------------------------")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_aleatorio(numero)}     |")
                 print(f"+-------------------------------------------------------------------------")
-                
+     
             elif destino == 'Morse':
                 print(f"+-------------------------------------------------------------------------")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_morse(numero)}         |")
                 print(f"+-------------------------------------------------------------------------")
-
-        
-
-                
-
-
         else:
             print(f"+---------------------------------------------------------------------+")
             print(f"|No. Línea : {linea}   | Token Numero : {numero} | Token Error: {destino} |")
