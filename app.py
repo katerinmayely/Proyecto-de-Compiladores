@@ -1,7 +1,6 @@
 from flask import Flask, send_from_directory
-import re
 from analizador_sintactico import imprimir_arbol_sintactico_y_resultado
-from analizador_lexico import convertir
+from analizador_lexico import analisis_lexico
 
 app = Flask(__name__)
 
@@ -17,10 +16,12 @@ def analisis_sintactico(entrada):
 def analizar(entrada):
     
     #analisis léxico
-    convertir(entrada)
+    analisis_lexico(entrada)
     
     #analisis sintáctico
-    return analisis_sintactico(entrada)
+    salida = analisis_sintactico(entrada)
+    
+    return salida
 
 if __name__ == '__main__':
     app.run(debug = True)

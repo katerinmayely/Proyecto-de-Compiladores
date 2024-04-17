@@ -1,5 +1,5 @@
 from lark import Lark, Tree
-from analizador_lexico import  decimal_a_aleatorio, decimal_a_binario, decimal_a_hexadecimal, decimal_a_morse, decimal_a_octal, decimal_a_romano
+from funciones_de_conversion import  decimal_a_aleatorio, decimal_a_binario, decimal_a_hexadecimal, decimal_a_morse, decimal_a_octal, decimal_a_romano
 
 # Gramática del lenguaje
 gramatica = '''
@@ -48,6 +48,8 @@ def evaluar(arbol):
         return str(decimal_a_morse(entero)) 
     elif valor_a_evaluar == 'aleatorio':
         return str(decimal_a_aleatorio(entero)) 
+    else:
+        return 'La entrada no coincide con la grámatica.'
 
 #Función para analizar sintácticamente una entrada e imprimir un árbol sintáctico.
 def imprimir_arbol_sintactico_y_resultado(entrada):
@@ -61,8 +63,9 @@ def imprimir_arbol_sintactico_y_resultado(entrada):
         print("\nAnálisis Sintáctico")
         print("Árbol sintáctico:")
         mostrar_arbol(arbol)
+        print('Salida: ' + evaluar(arbol))
     except Exception as e:
-        print(e)
+        print('La entrada no coincide con la Grámatica.')
         
     return str(evaluar(arbol))
     
