@@ -3,7 +3,7 @@ import random
 import convertidor_romano
 
 #Inicio - Analizador Léxico
-palabras_reservadas = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo', 'Aleatorio']
+palabras_reservadas = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Morse', 'Aleatorio']
 
 def analizador_lexico(cadena):
     tokens = re.findall(r'(\d+)([A-Za-z]+)', cadena)
@@ -99,7 +99,7 @@ def decimal_a_romano(n):
     return convertidor_romano.convertir_a_romano(n)
     
 def decimal_a_aleatorio(numero):
-    destinos = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo']
+    destinos = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Morse']
     destino_aleatorio = random.choice(destinos)
     if destino_aleatorio == 'Hexadecimal':
         return 'Hexadecimal - ' +  decimal_a_hexadecimal(numero)
@@ -108,9 +108,9 @@ def decimal_a_aleatorio(numero):
     elif destino_aleatorio == 'Binario':
         return 'Binario - ' +  decimal_a_binario(numero)
     elif destino_aleatorio == 'Romano':
-        return 'Romano - ' +  decimal_a_romano(numero)
-    elif destino_aleatorio == 'Alternativo':
-        return 'Morse - ' +  decimal_a_morse(numero)
+        return decimal_a_romano(numero)
+    elif destino_aleatorio == 'Morse':
+        return decimal_a_morse(numero)
 
 
 def convertir(cadena):
@@ -148,7 +148,7 @@ def convertir(cadena):
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_aleatorio(numero)}     |")
                 print(f"+-------------------------------------------------------------------------")
      
-            elif destino.lower() == 'Alternativo'.lower():
+            elif destino.lower() == 'Morse'.lower():
                 print(f"+-------------------------------------------------------------------------")
                 print(f"| Cadena: {numero}{destino}  | Salida: {decimal_a_morse(numero)}         |")
                 print(f"+-------------------------------------------------------------------------")

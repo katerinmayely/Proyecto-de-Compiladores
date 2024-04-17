@@ -44,9 +44,6 @@ def convertir_a_romano(number):
     return romano
     
 
-
-
-
 def construir_romano_mayor_igual4000(numero):
     contarMiles=contar_miles(numero)
     numero_romano = ''
@@ -75,21 +72,3 @@ def construir_romano_mayor_igual4000(numero):
 
     return numero_romano
 
-
-
-
-print(convertir_a_romano(4142801102))  # Salida: 3
-
-print(convertir_a_romano(12174591))
-
-print(convertir_a_romano(3142801102))
-
-print(convertir_a_romano(412279109400))
-
-print(convertir_a_romano(3125000))
-print(convertir_a_romano(13))
-
-print(convertir_a_romano(1592752900))
-
-#https://calcuonline.com/calculadoras/conversor-numeros-romanos/
-#https://www.youtube.com/watch?v=zzjXOXMWte4
