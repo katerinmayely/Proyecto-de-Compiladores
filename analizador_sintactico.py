@@ -1,6 +1,5 @@
 from lark import Lark, Tree
-from random import random, choice
-from analizador_lexico import convertir, decimal_a_aleatorio, decimal_a_binario, decimal_a_hexadecimal, decimal_a_morse, decimal_a_octal, decimal_a_romano
+from analizador_lexico import  decimal_a_aleatorio, decimal_a_binario, decimal_a_hexadecimal, decimal_a_morse, decimal_a_octal, decimal_a_romano
 
 # Gramática del lenguaje
 gramatica = '''

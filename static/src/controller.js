@@ -26,6 +26,7 @@ function convertir(){
         .then(result => {
             console.log(result);
             mostrarSalida(result);
+            return
         })
         .catch(error => {
             alert('Entrada Inválida.')

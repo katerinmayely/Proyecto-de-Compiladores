@@ -102,15 +102,15 @@ def decimal_a_aleatorio(numero):
     destinos = ['Hexadecimal', 'Octal', 'Binario', 'Romano', 'Alternativo']
     destino_aleatorio = random.choice(destinos)
     if destino_aleatorio == 'Hexadecimal':
-        return decimal_a_hexadecimal(numero)
+        return 'Hexadecimal - ' +  decimal_a_hexadecimal(numero)
     elif destino_aleatorio == 'Octal':
-        return decimal_a_octal(numero)
+        return 'Octal - ' +  decimal_a_octal(numero)
     elif destino_aleatorio == 'Binario':
-        return decimal_a_binario(numero)
+        return 'Binario - ' +  decimal_a_binario(numero)
     elif destino_aleatorio == 'Romano':
-        return decimal_a_romano(numero)
+        return 'Romano - ' +  decimal_a_romano(numero)
     elif destino_aleatorio == 'Alternativo':
-        return decimal_a_morse(numero)
+        return 'Morse - ' +  decimal_a_morse(numero)
 
 
 def convertir(cadena):
